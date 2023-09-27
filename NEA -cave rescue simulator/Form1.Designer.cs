@@ -37,8 +37,8 @@
             // 
             // btn_startbutton
             // 
-            this.btn_startbutton.Location = new System.Drawing.Point(476, 502);
-            this.btn_startbutton.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.btn_startbutton.Location = new System.Drawing.Point(483, 498);
+            this.btn_startbutton.Margin = new System.Windows.Forms.Padding(4);
             this.btn_startbutton.Name = "btn_startbutton";
             this.btn_startbutton.Size = new System.Drawing.Size(177, 28);
             this.btn_startbutton.TabIndex = 0;
@@ -49,15 +49,15 @@
             // pnlGridPanel
             // 
             this.pnlGridPanel.Location = new System.Drawing.Point(0, 0);
-            this.pnlGridPanel.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.pnlGridPanel.Margin = new System.Windows.Forms.Padding(4);
             this.pnlGridPanel.Name = "pnlGridPanel";
-            this.pnlGridPanel.Size = new System.Drawing.Size(1064, 495);
+            this.pnlGridPanel.Size = new System.Drawing.Size(1000, 480);
             this.pnlGridPanel.TabIndex = 1;
             // 
             // btn_startingpoint
             // 
-            this.btn_startingpoint.Location = new System.Drawing.Point(43, 502);
-            this.btn_startingpoint.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.btn_startingpoint.Location = new System.Drawing.Point(39, 498);
+            this.btn_startingpoint.Margin = new System.Windows.Forms.Padding(4);
             this.btn_startingpoint.Name = "btn_startingpoint";
             this.btn_startingpoint.Size = new System.Drawing.Size(159, 28);
             this.btn_startingpoint.TabIndex = 2;
@@ -67,8 +67,8 @@
             // 
             // btn_endingpoint
             // 
-            this.btn_endingpoint.Location = new System.Drawing.Point(239, 502);
-            this.btn_endingpoint.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.btn_endingpoint.Location = new System.Drawing.Point(259, 498);
+            this.btn_endingpoint.Margin = new System.Windows.Forms.Padding(4);
             this.btn_endingpoint.Name = "btn_endingpoint";
             this.btn_endingpoint.Size = new System.Drawing.Size(163, 28);
             this.btn_endingpoint.TabIndex = 3;
@@ -78,8 +78,8 @@
             // 
             // btn_shortestpath
             // 
-            this.btn_shortestpath.Location = new System.Drawing.Point(720, 502);
-            this.btn_shortestpath.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.btn_shortestpath.Location = new System.Drawing.Point(705, 498);
+            this.btn_shortestpath.Margin = new System.Windows.Forms.Padding(4);
             this.btn_shortestpath.Name = "btn_shortestpath";
             this.btn_shortestpath.Size = new System.Drawing.Size(283, 28);
             this.btn_shortestpath.TabIndex = 5;
@@ -91,13 +91,13 @@
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(1067, 555);
+            this.ClientSize = new System.Drawing.Size(1001, 549);
             this.Controls.Add(this.btn_shortestpath);
             this.Controls.Add(this.btn_endingpoint);
             this.Controls.Add(this.btn_startingpoint);
             this.Controls.Add(this.pnlGridPanel);
             this.Controls.Add(this.btn_startbutton);
-            this.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.Margin = new System.Windows.Forms.Padding(4);
             this.Name = "Form1";
             this.Text = "Form1";
             this.Load += new System.EventHandler(this.Form1_Load);

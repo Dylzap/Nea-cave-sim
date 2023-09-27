@@ -13,18 +13,18 @@ namespace NEA__cave_rescue_simulator
     {
         public const int GRID_SPACE_WIDTH = 20;
         public const int GRID_SPACE_HEIGHT = 20;
-   
-         public int FromWeighting { get; set; }
-         public int ToWeighting { get; set; }
-         public int SumWeight { get; set; }
 
-         public int GridX { get; set; }
-         public int GridY { get; set; }
-        
+        public int FromWeighting { get; set; }
+        public int ToWeighting { get; set; }
+        public int SumWeight { get; set; }
+
+        public int GridX { get; set; }
+        public int GridY { get; set; }
+
         public bool cellvisited = false;
 
-         Random randomcell = new Random();
-         List<Gridspace> AdjacentCellsList = new List<Gridspace>();
+        Random randomcell = new Random();
+        List<Gridspace> AdjacentCellsList = new List<Gridspace>();
         Gridspace adjacentcell = new Gridspace();
         Gridspace currentcell = new Gridspace();
         Gridspace wall = new Gridspace();
@@ -34,8 +34,7 @@ namespace NEA__cave_rescue_simulator
         Gridspace connectwalls3 = new Gridspace();
         Gridspace connectwalls4 = new Gridspace();
         Gridspace Randomcell = new Gridspace();
-        bool iswallconnected = false;
-
+    
 
         public void Findadajacentcells()
         {
@@ -54,7 +53,7 @@ namespace NEA__cave_rescue_simulator
                 {
 
                     AdjacentCellsList.Add(adjacentcell);
-                  
+
                     adjacentcell.cellvisited = true;
 
 
@@ -67,7 +66,7 @@ namespace NEA__cave_rescue_simulator
                 {
 
                     AdjacentCellsList.Add(adjacentcell);
-                   
+
                     adjacentcell.cellvisited = true;
 
 
@@ -81,7 +80,7 @@ namespace NEA__cave_rescue_simulator
 
                     adjacentcell.cellvisited = true;
                     AdjacentCellsList.Add(adjacentcell);
-                   
+
 
                 }
                 adjacentcell.GridY = currentcell.GridY - 1;
@@ -90,7 +89,7 @@ namespace NEA__cave_rescue_simulator
                 {
 
                     AdjacentCellsList.Add(adjacentcell);
-                   
+
                     adjacentcell.cellvisited = true;
 
                 }
@@ -98,37 +97,52 @@ namespace NEA__cave_rescue_simulator
             }
 
         }
-       
+
         public void Diagonalladjacentwall()
         {
-            if (iswallconnected == true)
+          
+            connectwalls1.GridX = currentcell.GridX - 1;
+            connectwalls1.GridY = currentcell.GridY - 1;
+
+            connectwalls2.GridX = currentcell.GridX - 1;
+            connectwalls2.GridY = currentcell.GridY + 1;
+
+            connectwalls3.GridX = currentcell.GridX + 1;
+            connectwalls3.GridY = currentcell.GridY + 1;
+
+            connectwalls4.GridX = currentcell.GridX + 1;
+            connectwalls4.GridY = currentcell.GridY - 1;
+
+
+
+
+            if (connectwalls1.cellvisited == false)
             {
-                connectwalls1.GridX = currentcell.GridX - 1;
-                connectwalls1.GridY = currentcell.GridY - 1;
-
-                connectwalls2.GridX = currentcell.GridX - 1;
-                connectwalls2.GridY = currentcell.GridY + 1;
-
-                connectwalls3.GridX = currentcell.GridX + 1;
-                connectwalls3.GridY = currentcell.GridY + 1;
-
-                connectwalls4.GridX = currentcell.GridX + 1;
-                connectwalls4.GridY = currentcell.GridY - 1;
-
                 AdjacentCellsList.Add(connectwalls1);
-                
-                AdjacentCellsList.Add(connectwalls2);
+
+            }
+            if (connectwalls1.cellvisited == false)
+            {
+                AdjacentCellsList.Add(connectwalls1);
+
+            }
+            if (connectwalls1.cellvisited == false)
+            {
+                AdjacentCellsList.Add(connectwalls1);
+
+            }
+            if (connectwalls1.cellvisited == false)
+            {
+                AdjacentCellsList.Add(connectwalls1);
+
+            }
+
                
 
-                AdjacentCellsList.Add(connectwalls3);
-               
 
-                AdjacentCellsList.Add(connectwalls4);
-                
-                
 
                 //iterate through list if the cells have been visited or is a wall or when wall is generated put the walls as visited 
-            }
+            
 
 
         }
@@ -140,7 +154,7 @@ namespace NEA__cave_rescue_simulator
             //AdjacentCellsList.ElementAt(rng).BackColor = Color.Brown;
             //wall = AdjacentCellsList.ElementAt(rng);
 
-           
+
             Adjacentcellstack.Pop();
             Adjacentcellstack.Prepend(AdjacentCellsList.ElementAt(rng));
 
@@ -150,7 +164,7 @@ namespace NEA__cave_rescue_simulator
                 {
                     wall = adjacentcell;
                     Adjacentcellstack.Push(adjacentcell);
-                    
+
                 }
             }
 
@@ -178,9 +192,10 @@ namespace NEA__cave_rescue_simulator
 
             wall.BackColor = Color.Brown;
             currentcell.cellvisited = true;
+            currentcell = Adjacentcellstack.Peek();
         }
-
         
+
 
     }
 }

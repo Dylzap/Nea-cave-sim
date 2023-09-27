@@ -9,14 +9,29 @@ namespace NEA__cave_rescue_simulator
 {
     public class Maze : Gridspace 
     {
+
         public void GenerateMaze()
         {
-          
+            int totalcells = 1200;
+            int visitedcells = 0;
+
+
+            while (visitedcells < totalcells)
+            {
+
+                Diagonalladjacentwall();
+                Findadajacentcells();
+                Getrandomwall();
+
+                visitedcells = visitedcells + 8;
+
+            }
+
 
 
         }
 
-
+        
     }
 
 
