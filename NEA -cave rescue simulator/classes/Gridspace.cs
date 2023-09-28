@@ -34,7 +34,8 @@ namespace NEA__cave_rescue_simulator
         Gridspace connectwalls3 = new Gridspace();
         Gridspace connectwalls4 = new Gridspace();
         Gridspace Randomcell = new Gridspace();
-    
+        int adjacantcellsvisited;
+        int availablesquares = 0;
 
         public void Findadajacentcells()
         {
@@ -194,8 +195,26 @@ namespace NEA__cave_rescue_simulator
             currentcell.cellvisited = true;
             currentcell = Adjacentcellstack.Peek();
         }
-        
+       public bool Finddeadends()
+        {
+            for (int i = 0; i < AdjacentCellsList.Capacity;)
+            {
+                foreach (Gridspace gridspace in AdjacentCellsList)
+                {
+                    if (gridspace.cellvisited)
+                    {
+                        adjacantcellsvisited = adjacantcellsvisited + 1;
+                        if (adjacantcellsvisited == 8)
+                        {
+                            currentcell = Adjacentcellstack.Peek();
+                            return true;
+                        }
+                    }
+                }
 
+            }
 
+            return false;
+        }
     }
 }

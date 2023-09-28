@@ -19,3 +19,25 @@ C:\Users\My PC\Desktop\year 13 Compdci\NEA -cave rescue simulator\obj\Debug\NEA 
 C:\Users\My PC\Desktop\year 13 Compdci\NEA -cave rescue simulator\obj\Debug\NEA -cave rescue simulator.csproj.CoreCompileInputs.cache
 C:\Users\My PC\Desktop\year 13 Compdci\NEA -cave rescue simulator\obj\Debug\NEA -cave rescue simulator.exe
 C:\Users\My PC\Desktop\year 13 Compdci\NEA -cave rescue simulator\obj\Debug\NEA -cave rescue simulator.pdb
+U:\Nea-cave-sim-main\NEA -cave rescue simulator\obj\Debug\NEA -cave rescue simulator.csproj.AssemblyReference.cache
+U:\Nea-cave-sim-main\NEA -cave rescue simulator\obj\Debug\NEA -cave rescue simulator.csproj.SuggestedBindingRedirects.cache
+U:\Nea-cave-sim-main\NEA -cave rescue simulator\obj\Debug\NEA__cave_rescue_simulator.Form1.resources
+U:\Nea-cave-sim-main\NEA -cave rescue simulator\obj\Debug\NEA__cave_rescue_simulator.Properties.Resources.resources
+U:\Nea-cave-sim-main\NEA -cave rescue simulator\obj\Debug\NEA -cave rescue simulator.csproj.GenerateResource.cache
+U:\Nea-cave-sim-main\NEA -cave rescue simulator\obj\Debug\NEA -cave rescue simulator.csproj.CoreCompileInputs.cache
+U:\Nea-cave-sim-main\NEA -cave rescue simulator\obj\Debug\NEA -cave rescue simulator.exe
+U:\Nea-cave-sim-main\NEA -cave rescue simulator\obj\Debug\NEA -cave rescue simulator.pdb
+U:\Nea-cave-sim-main\NEA -cave rescue simulator\bin\Debug\NEA -cave rescue simulator.exe.config
+U:\Nea-cave-sim-main\NEA -cave rescue simulator\bin\Debug\NEA -cave rescue simulator.exe
+U:\Nea-cave-sim-main\NEA -cave rescue simulator\bin\Debug\NEA -cave rescue simulator.pdb
+\\germanium\students$\y7\17Zapatos.Dylan\Nea-cave-sim-main\NEA -cave rescue simulator\bin\Debug\NEA -cave rescue simulator.exe.config
+\\germanium\students$\y7\17Zapatos.Dylan\Nea-cave-sim-main\NEA -cave rescue simulator\bin\Debug\NEA -cave rescue simulator.exe
+\\germanium\students$\y7\17Zapatos.Dylan\Nea-cave-sim-main\NEA -cave rescue simulator\bin\Debug\NEA -cave rescue simulator.pdb
+\\germanium\students$\y7\17Zapatos.Dylan\Nea-cave-sim-main\NEA -cave rescue simulator\obj\Debug\NEA -cave rescue simulator.csproj.AssemblyReference.cache
+\\germanium\students$\y7\17Zapatos.Dylan\Nea-cave-sim-main\NEA -cave rescue simulator\obj\Debug\NEA -cave rescue simulator.csproj.SuggestedBindingRedirects.cache
+\\germanium\students$\y7\17Zapatos.Dylan\Nea-cave-sim-main\NEA -cave rescue simulator\obj\Debug\NEA__cave_rescue_simulator.Form1.resources
+\\germanium\students$\y7\17Zapatos.Dylan\Nea-cave-sim-main\NEA -cave rescue simulator\obj\Debug\NEA__cave_rescue_simulator.Properties.Resources.resources
+\\germanium\students$\y7\17Zapatos.Dylan\Nea-cave-sim-main\NEA -cave rescue simulator\obj\Debug\NEA -cave rescue simulator.csproj.GenerateResource.cache
+\\germanium\students$\y7\17Zapatos.Dylan\Nea-cave-sim-main\NEA -cave rescue simulator\obj\Debug\NEA -cave rescue simulator.csproj.CoreCompileInputs.cache
+\\germanium\students$\y7\17Zapatos.Dylan\Nea-cave-sim-main\NEA -cave rescue simulator\obj\Debug\NEA -cave rescue simulator.exe
+\\germanium\students$\y7\17Zapatos.Dylan\Nea-cave-sim-main\NEA -cave rescue simulator\obj\Debug\NEA -cave rescue simulator.pdb

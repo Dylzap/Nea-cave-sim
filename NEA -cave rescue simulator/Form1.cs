@@ -30,8 +30,9 @@ namespace NEA__cave_rescue_simulator
         private void btn_startbutton_Click(object sender, EventArgs e)
         {
            SetupGridSpaces();
-            
 
+            Maze maze = new Maze();
+            maze.GenerateMaze();
         }
         private void SetupGridSpaces()
         {
@@ -98,6 +99,12 @@ namespace NEA__cave_rescue_simulator
             return matrixLoaded;
         }
 
+        //GenerateMaze(EventHandler btn_startbutton)
+        //{
+
+         //   return null; 
+        //}
+
 
         private void GridLocation_Click(object sender, EventArgs e)
         {
@@ -123,6 +130,12 @@ namespace NEA__cave_rescue_simulator
         private void btn_shortestpath_Click(object sender, EventArgs e)
         {
 
+        }
+
+        private void btn_startbutton_Click_1(object sender, EventArgs e)
+        {
+            Maze maze = new Maze();
+            maze.GenerateMaze();
         }
     }
 }

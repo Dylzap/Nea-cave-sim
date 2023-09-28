@@ -37,29 +37,26 @@
             // 
             // btn_startbutton
             // 
-            this.btn_startbutton.Location = new System.Drawing.Point(483, 498);
-            this.btn_startbutton.Margin = new System.Windows.Forms.Padding(4);
+            this.btn_startbutton.Location = new System.Drawing.Point(344, 405);
             this.btn_startbutton.Name = "btn_startbutton";
-            this.btn_startbutton.Size = new System.Drawing.Size(177, 28);
+            this.btn_startbutton.Size = new System.Drawing.Size(133, 23);
             this.btn_startbutton.TabIndex = 0;
             this.btn_startbutton.Text = "Start!";
             this.btn_startbutton.UseVisualStyleBackColor = true;
-            this.btn_startbutton.Click += new System.EventHandler(this.btn_startbutton_Click);
+            this.btn_startbutton.Click += new System.EventHandler(this.btn_startbutton_Click_1);
             // 
             // pnlGridPanel
             // 
             this.pnlGridPanel.Location = new System.Drawing.Point(0, 0);
-            this.pnlGridPanel.Margin = new System.Windows.Forms.Padding(4);
             this.pnlGridPanel.Name = "pnlGridPanel";
-            this.pnlGridPanel.Size = new System.Drawing.Size(1000, 480);
+            this.pnlGridPanel.Size = new System.Drawing.Size(600, 400);
             this.pnlGridPanel.TabIndex = 1;
             // 
             // btn_startingpoint
             // 
-            this.btn_startingpoint.Location = new System.Drawing.Point(39, 498);
-            this.btn_startingpoint.Margin = new System.Windows.Forms.Padding(4);
+            this.btn_startingpoint.Location = new System.Drawing.Point(22, 406);
             this.btn_startingpoint.Name = "btn_startingpoint";
-            this.btn_startingpoint.Size = new System.Drawing.Size(159, 28);
+            this.btn_startingpoint.Size = new System.Drawing.Size(119, 23);
             this.btn_startingpoint.TabIndex = 2;
             this.btn_startingpoint.Text = "Starting point";
             this.btn_startingpoint.UseVisualStyleBackColor = true;
@@ -67,10 +64,9 @@
             // 
             // btn_endingpoint
             // 
-            this.btn_endingpoint.Location = new System.Drawing.Point(259, 498);
-            this.btn_endingpoint.Margin = new System.Windows.Forms.Padding(4);
+            this.btn_endingpoint.Location = new System.Drawing.Point(186, 406);
             this.btn_endingpoint.Name = "btn_endingpoint";
-            this.btn_endingpoint.Size = new System.Drawing.Size(163, 28);
+            this.btn_endingpoint.Size = new System.Drawing.Size(122, 23);
             this.btn_endingpoint.TabIndex = 3;
             this.btn_endingpoint.Text = "Ending point";
             this.btn_endingpoint.UseVisualStyleBackColor = true;
@@ -78,10 +74,9 @@
             // 
             // btn_shortestpath
             // 
-            this.btn_shortestpath.Location = new System.Drawing.Point(705, 498);
-            this.btn_shortestpath.Margin = new System.Windows.Forms.Padding(4);
+            this.btn_shortestpath.Location = new System.Drawing.Point(608, 405);
             this.btn_shortestpath.Name = "btn_shortestpath";
-            this.btn_shortestpath.Size = new System.Drawing.Size(283, 28);
+            this.btn_shortestpath.Size = new System.Drawing.Size(174, 23);
             this.btn_shortestpath.TabIndex = 5;
             this.btn_shortestpath.Text = "Find the shortest path!";
             this.btn_shortestpath.UseVisualStyleBackColor = true;
@@ -89,15 +84,14 @@
             // 
             // Form1
             // 
-            this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
+            this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(1001, 549);
+            this.ClientSize = new System.Drawing.Size(803, 446);
             this.Controls.Add(this.btn_shortestpath);
             this.Controls.Add(this.btn_endingpoint);
             this.Controls.Add(this.btn_startingpoint);
             this.Controls.Add(this.pnlGridPanel);
             this.Controls.Add(this.btn_startbutton);
-            this.Margin = new System.Windows.Forms.Padding(4);
             this.Name = "Form1";
             this.Text = "Form1";
             this.Load += new System.EventHandler(this.Form1_Load);

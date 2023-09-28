@@ -16,11 +16,18 @@ namespace NEA__cave_rescue_simulator
             int visitedcells = 0;
 
 
-            while (visitedcells < totalcells)
+            while (visitedcells <= totalcells)
             {
 
                 Diagonalladjacentwall();
                 Findadajacentcells();
+
+                if (Finddeadends() == true )
+                {
+                    Diagonalladjacentwall();
+                    Findadajacentcells();
+
+                }
                 Getrandomwall();
 
                 visitedcells = visitedcells + 8;
