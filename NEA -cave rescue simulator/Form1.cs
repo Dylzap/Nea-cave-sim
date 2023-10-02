@@ -31,8 +31,8 @@ namespace NEA__cave_rescue_simulator
         {
            SetupGridSpaces();
 
-            Maze maze = new Maze();
-            maze.GenerateMaze();
+            //Maze maze = new Maze();
+            //maze.GenerateMaze();
         }
         private void SetupGridSpaces()
         {
@@ -134,8 +134,7 @@ namespace NEA__cave_rescue_simulator
 
         private void btn_startbutton_Click_1(object sender, EventArgs e)
         {
-            Maze maze = new Maze();
-            maze.GenerateMaze();
+           
         }
     }
 }

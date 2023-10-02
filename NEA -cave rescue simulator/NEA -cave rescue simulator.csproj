@@ -46,10 +46,14 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="classes\Data base table.cs" />
+    <Compile Include="classes\Database manager.cs" />
+    <Compile Include="classes\Generaterandommaze.cs" />
     <Compile Include="classes\Gridspace.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="classes\Maze.cs">
+    <Compile Include="classes\Maze.cs" />
+    <Compile Include="classes\Pathfinder.cs">
       <SubType>Form</SubType>
     </Compile>
     <Compile Include="Form1.cs">
