@@ -18,8 +18,6 @@ namespace NEA__cave_rescue_simulator
         public Maze(GenreateRandomMaze randomMaze)
         {
             this.randomMaze = randomMaze;
-
-
         }
 
         public void GenerateMaze(int gridx , int gridy)
