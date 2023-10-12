@@ -12,8 +12,10 @@ namespace NEA__cave_rescue_simulator
         GridSpace currentcell = new GridSpace();
         Maze maze;
         Stack<int> currentcellcoordinates = new Stack<int>();
-
+        List<GridSpace>adjacent_cells = new List<GridSpace>();
         List<GridSpace> visited_list = new List<GridSpace>();
+        List<GridSpace> Wall_List = new List<GridSpace>();
+        GridSpace Wall = new GridSpace();
 
         public GenreateRandomMaze(Maze maze)
         {
@@ -32,14 +34,15 @@ namespace NEA__cave_rescue_simulator
             currentcellcoordinates.Push(currentcell.GridX);
             currentcellcoordinates.Push(currentcell.GridY);
 
-            currentcell.GridY = 1;
-
-            var adjacent_cells = new List<GridSpace>();
-
             adjacent_cells.Add(maze.maze[start_x, start_y + 1]); // Up
             adjacent_cells.Add(maze.maze[start_x, start_y - 1]); // Down
             adjacent_cells.Add(maze.maze[start_x - 1 , start_y]); //left 
             adjacent_cells.Add(maze.maze[start_x +1, start_y]);//right
+            adjacent_cells.Add(maze.maze[start_x + 1, start_y + 1]); //top right 
+            adjacent_cells.Add(maze.maze[start_x - 1, start_y + 1]);//top left 
+            adjacent_cells.Add(maze.maze[start_x + 1, start_y -1 ]);//bottom right
+            adjacent_cells.Add(maze.maze[start_x - 1, start_y - 1 ]);//bottom left 
+
 
             foreach (var cell in adjacent_cells)
             {
@@ -57,7 +60,7 @@ namespace NEA__cave_rescue_simulator
             {
                 Adjacentcells(start_x,start_y);
             }
-            catch (Exception ex)
+            catch (Exception)
             {
                 
                 return false;
@@ -65,7 +68,23 @@ namespace NEA__cave_rescue_simulator
 
             return true;
         }
-        public void Connectwalls()
+        public bool Connectwalls()
+        {
+            foreach (GridSpace cell in adjacent_cells)
+            {
+
+                cell.isWallpresent = true;
+
+                Wall_List.Add(cell);
+
+
+
+            }
+
+            return false;
+
+        }
+       public void Generatewalls()
         {
 
 
