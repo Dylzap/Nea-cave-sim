@@ -15,12 +15,13 @@ namespace NEA__cave_rescue_simulator
         List<GridSpace>adjacent_cells = new List<GridSpace>();
         List<GridSpace> visited_list = new List<GridSpace>();
         List<GridSpace> Wall_List = new List<GridSpace>();
+        List<int> adjacentcellcoordinates = new List<int>();
         GridSpace Wall = new GridSpace();
 
         public GenreateRandomMaze(Maze maze)
         {
             this.maze = maze;
-
+            
 
         }
         /// <summary>
@@ -73,8 +74,9 @@ namespace NEA__cave_rescue_simulator
             foreach (GridSpace cell in adjacent_cells)
             {
 
-                cell.isWallpresent = true;
-
+                cell.isWallpresent = true; //need to get co ordinates of connected squares.
+                adjacentcellcoordinates.Add(cell.GridX);
+                adjacentcellcoordinates.Add(cell.GridY);
                 Wall_List.Add(cell);
 
 
@@ -86,7 +88,7 @@ namespace NEA__cave_rescue_simulator
         }
        public void Generatewalls()
         {
-
+            //uuse co ordinates to add walls from co ordinates list
 
         }
         
