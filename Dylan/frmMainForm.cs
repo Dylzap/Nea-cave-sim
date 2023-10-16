@@ -18,7 +18,7 @@ namespace NEA__cave_rescue_simulator
 
         private void Form1_Load(object sender, EventArgs e)
         {
-            
+            // ITERATE THROUGHT THE ROWS AND COMPARE THE COORDINATES form the coordinates of each grid
 
         }
 

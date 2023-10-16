@@ -14,9 +14,9 @@ namespace NEA__cave_rescue_simulator
         Stack<int> currentcellcoordinates = new Stack<int>();
         List<GridSpace>adjacent_cells = new List<GridSpace>();
         List<GridSpace> visited_list = new List<GridSpace>();
-        List<GridSpace> Wall_List = new List<GridSpace>();
         List<int> adjacentcellcoordinates = new List<int>();
         GridSpace Wall = new GridSpace();
+        Random RNG = new Random();
 
         public GenreateRandomMaze(Maze maze)
         {
@@ -44,6 +44,7 @@ namespace NEA__cave_rescue_simulator
             adjacent_cells.Add(maze.maze[start_x + 1, start_y -1 ]);//bottom right
             adjacent_cells.Add(maze.maze[start_x - 1, start_y - 1 ]);//bottom left 
 
+            // adds all adjacent cells aound current cell 
 
             foreach (var cell in adjacent_cells)
             {
@@ -74,24 +75,47 @@ namespace NEA__cave_rescue_simulator
             foreach (GridSpace cell in adjacent_cells)
             {
 
-                cell.isWallpresent = true; //need to get co ordinates of connected squares.
+                cell.isWallpresent = true;  
                 adjacentcellcoordinates.Add(cell.GridX);
                 adjacentcellcoordinates.Add(cell.GridY);
-                Wall_List.Add(cell);
-
-
+               
+                //adds coodinates from the adjacent cells in the list 
 
             }
 
             return false;
 
         }
-       public void Generatewalls()
+       public string Generatewalls()
         {
             //uuse co ordinates to add walls from co ordinates list
+            for (int i = 0; i < adjacentcellcoordinates.Count; i++)
+            {
+               
+
+                for (int j = 1; j < adjacentcellcoordinates.Count; j++)
+                {
+
+                    Wall.GridX = adjacentcellcoordinates[i];  // coordinates of wall from list
+                    Wall.GridY= adjacentcellcoordinates[j];
+
+                    Wall.isWallpresent = true;
+
+                    return "B"; // remove return if not needed to be repressented in a textfile
+                }
+
+                return "W";
+            }
+            return "W";
+        }
+        public void Generategap()
+        {
+            // get coordinates of the gap and be put as the new current cell 
+            int index = RNG.Next(adjacent_cells.Count);
+            currentcell = adjacent_cells.ElementAt(index);
+            adjacent_cells.RemoveAt(index);
 
         }
-        
 
     }
 }

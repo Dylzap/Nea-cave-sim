@@ -21,3 +21,15 @@ C:\Users\My PC\Desktop\year 13 Compdci\Nea-cave-sim-main\Dylan\obj\Debug\NEA -ca
 C:\Users\My PC\Desktop\year 13 Compdci\Nea-cave-sim-main\Dylan\obj\Debug\NEA -cave rescue simulator.csproj.CoreCompileInputs.cache
 C:\Users\My PC\Desktop\year 13 Compdci\Nea-cave-sim-main\Dylan\obj\Debug\NEA -cave rescue simulator.exe
 C:\Users\My PC\Desktop\year 13 Compdci\Nea-cave-sim-main\Dylan\obj\Debug\NEA -cave rescue simulator.pdb
+U:\year 12 computer science\Nea-cave-sim-main\Dylan\bin\Debug\Grid.txt
+U:\year 12 computer science\Nea-cave-sim-main\Dylan\bin\Debug\NEA -cave rescue simulator.exe.config
+U:\year 12 computer science\Nea-cave-sim-main\Dylan\bin\Debug\NEA -cave rescue simulator.exe
+U:\year 12 computer science\Nea-cave-sim-main\Dylan\bin\Debug\NEA -cave rescue simulator.pdb
+U:\year 12 computer science\Nea-cave-sim-main\Dylan\obj\Debug\NEA -cave rescue simulator.csproj.AssemblyReference.cache
+U:\year 12 computer science\Nea-cave-sim-main\Dylan\obj\Debug\NEA -cave rescue simulator.csproj.SuggestedBindingRedirects.cache
+U:\year 12 computer science\Nea-cave-sim-main\Dylan\obj\Debug\NEA__cave_rescue_simulator.frmMainForm.resources
+U:\year 12 computer science\Nea-cave-sim-main\Dylan\obj\Debug\NEA__cave_rescue_simulator.Properties.Resources.resources
+U:\year 12 computer science\Nea-cave-sim-main\Dylan\obj\Debug\NEA -cave rescue simulator.csproj.GenerateResource.cache
+U:\year 12 computer science\Nea-cave-sim-main\Dylan\obj\Debug\NEA -cave rescue simulator.csproj.CoreCompileInputs.cache
+U:\year 12 computer science\Nea-cave-sim-main\Dylan\obj\Debug\NEA -cave rescue simulator.exe
+U:\year 12 computer science\Nea-cave-sim-main\Dylan\obj\Debug\NEA -cave rescue simulator.pdb
