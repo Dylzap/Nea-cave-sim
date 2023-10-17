@@ -3,6 +3,7 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
+using System.IO;
 
 namespace NEA__cave_rescue_simulator
 {
@@ -15,9 +16,9 @@ namespace NEA__cave_rescue_simulator
         List<GridSpace>adjacent_cells = new List<GridSpace>();
         List<GridSpace> visited_list = new List<GridSpace>();
         List<int> adjacentcellcoordinates = new List<int>();
-        GridSpace Wall = new GridSpace();
         Random RNG = new Random();
-
+        StreamWriter SR = new StreamWriter("Grid.txt");
+        GridSpace Wall = new GridSpace();
         public GenreateRandomMaze(Maze maze)
         {
             this.maze = maze;
@@ -44,7 +45,7 @@ namespace NEA__cave_rescue_simulator
             adjacent_cells.Add(maze.maze[start_x + 1, start_y -1 ]);//bottom right
             adjacent_cells.Add(maze.maze[start_x - 1, start_y - 1 ]);//bottom left 
 
-            // adds all adjacent cells aound current cell 
+            // adds all adjacent cells around current cell 
 
             foreach (var cell in adjacent_cells)
             {
@@ -88,20 +89,21 @@ namespace NEA__cave_rescue_simulator
         }
        public string Generatewalls()
         {
-            //uuse co ordinates to add walls from co ordinates list
-            for (int i = 0; i < adjacentcellcoordinates.Count; i++)
-            {
-               
 
-                for (int j = 1; j < adjacentcellcoordinates.Count; j++)
+            // have to save the white and black squares in a text file using the coordinates 
+            ////uuse co ordinates to add walls from co ordinates list
+            for (int i = 0; i <= adjacentcellcoordinates.Count; i++)
+            {
+                for (int j = 1; j <= adjacentcellcoordinates.Count; j++)
                 {
 
                     Wall.GridX = adjacentcellcoordinates[i];  // coordinates of wall from list
-                    Wall.GridY= adjacentcellcoordinates[j];
+                    Wall.GridY = adjacentcellcoordinates[j];
 
                     Wall.isWallpresent = true;
 
-                    return "B"; // remove return if not needed to be repressented in a textfile
+                    return "B";
+
                 }
 
                 return "W";
@@ -110,11 +112,27 @@ namespace NEA__cave_rescue_simulator
         }
         public void Generategap()
         {
-            // get coordinates of the gap and be put as the new current cell 
-            int index = RNG.Next(adjacent_cells.Count);
-            currentcell = adjacent_cells.ElementAt(index);
-            adjacent_cells.RemoveAt(index);
+            
+            currentcell.GridX = currentcellcoordinates.Peek();
+            currentcellcoordinates.Pop();
+            currentcell.GridY = currentcellcoordinates.Peek();
+            currentcellcoordinates.Pop();
+            
+        }
+        public void Dispaywalls()
+        {
+            for (int i = 0; i <= 7; i++)
+            {
+                SR.Write(Generatewalls());
+                for () 
+                {
+                    SR.WriteLine(); // puts a the string under a line 
 
+                }
+                
+               
+            }          
+    
         }
 
     }
