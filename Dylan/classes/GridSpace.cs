@@ -13,6 +13,7 @@ namespace NEA__cave_rescue_simulator
     {
         public const int GRID_SPACE_WIDTH = 20;
         public const int GRID_SPACE_HEIGHT = 20;
+
         public int GridX = 0;
         public int GridY = 0;
 
