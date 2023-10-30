@@ -8,24 +8,23 @@ namespace NEA__cave_rescue_simulator
     public partial class frmMainForm : Form
     {
         private string[,] matrix = null;
+
         private GridSpace lastClickedOnSpace = null;
 
         public frmMainForm()
         {
+            InitializeComponent();
         }
 
         private void Form1_Load(object sender, EventArgs e)
         {
-           
-
-            
             
 
         }
 
         private void btn_startbutton_Click(object sender, EventArgs e)
         {
-          
+           SetupGridSpaces();
         }
 
         private void SetupGridSpaces()
@@ -109,14 +108,6 @@ namespace NEA__cave_rescue_simulator
                 Panel clickedPanel = (Panel)sender;
                 clickedPanel.BorderStyle = BorderStyle.Fixed3D;
         }
-        public void Loadmaze(Panel pnlGridPanel , string Filanename)
-        {
-           
-
-
-        }
-
-
 
             private void pnlGrid_Paint(object sender, PaintEventArgs e)
             {
@@ -138,25 +129,9 @@ namespace NEA__cave_rescue_simulator
 
         }
 
-        private void btn_startbutton_Click_1(object sender, EventArgs e ,int gridx, int gridy, int start_x, int start_y)
+        private void btn_startbutton_Click_1(object sender, EventArgs e)
         {
             SetupGridSpaces();
-            Generatemaze(gridx, gridy, start_x, start_y);
-
-        }
-        public void Generatemaze(int gridx, int gridy , int start_x , int start_y)
-        {
-
-            Maze maze = new Maze();
-            GenreateRandomMaze randomMaze = new GenreateRandomMaze(maze);
-
-            randomMaze.Celloutofbounds(start_x, start_y);
-            randomMaze.Connectwalls();
-
-            maze.DisplayMaze(gridx ,gridy);
-            
-
-
         }
     }
 }

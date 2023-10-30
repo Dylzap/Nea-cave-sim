@@ -43,7 +43,7 @@
             this.btn_startbutton.TabIndex = 0;
             this.btn_startbutton.Text = "Start!";
             this.btn_startbutton.UseVisualStyleBackColor = true;
-            this.btn_startbutton.Click += new System.EventHandler(this.btn_startbutton_Click);
+            this.btn_startbutton.Click += new System.EventHandler(this.btn_startbutton_Click_1);
             // 
             // pnlGridPanel
             // 
