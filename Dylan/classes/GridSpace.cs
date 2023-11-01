@@ -11,6 +11,10 @@ namespace NEA__cave_rescue_simulator
 {
     public class GridSpace : Label
     {
+        GridSpace Startingpoint = null;
+        GridSpace Endingpoint = null;
+        GridSpace Locationavailable = null;
+
         public const int GRID_SPACE_WIDTH = 20;
         public const int GRID_SPACE_HEIGHT = 20;
         public int GridX = 0;
@@ -41,10 +45,14 @@ namespace NEA__cave_rescue_simulator
             {
                 this.BorderStyle = BorderStyle.Fixed3D;
                 this.BackColor = Color.Yellow;
-                this.Text = "C";
+                this.Text = "";
                 isSelected = true;
             }
         }
-        
+        public void Deselect()
+        {
+            this.BorderStyle = BorderStyle.FixedSingle;
+            this.BackColor = Color.White;
+        }
     }
 }
