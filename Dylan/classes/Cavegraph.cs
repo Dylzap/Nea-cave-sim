@@ -6,18 +6,10 @@ using System.Threading.Tasks;
 
 namespace NEA__cave_rescue_simulator.classes
 {
-    public class Pathfinder : frmMainForm
+    public  class Cavegraph
     {
-
-        List<GridSpace> Visitedpath;    
-        int totalsquares = 30 * 20;
-
-
-      
-       
-
-
-
+        List<GridSpace> Weightededges = new List<GridSpace>();
+        List<GridSpace> vertexes= new List<GridSpace>();
 
 
 

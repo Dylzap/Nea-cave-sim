@@ -46,13 +46,18 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="classes\Cavegraph.cs" />
+    <Compile Include="classes\Weightededge.cs" />
     <Compile Include="classes\DatabaseManager.cs" />
     <Compile Include="classes\GenreateRandomMaze.cs" />
     <Compile Include="classes\GridSpace.cs">
       <SubType>Component</SubType>
     </Compile>
     <Compile Include="classes\Maze.cs" />
-    <Compile Include="classes\Pathfinder.cs" />
+    <Compile Include="classes\Pathfinder.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="classes\Vertex.cs" />
     <Compile Include="frmMainForm.cs">
       <SubType>Form</SubType>
     </Compile>

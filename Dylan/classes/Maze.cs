@@ -13,29 +13,31 @@ namespace NEA__cave_rescue_simulator
         public GridSpace[,] maze;
         public int gridx;
         public int gridy;
-
-        public Maze()
+        GenreateRandomMaze randomMaze;
+        
+        public Maze(GenreateRandomMaze randomMaze)
         {
+            this.randomMaze = randomMaze;
         }
 
-        public void DisplayMaze(int gridx , int gridy)
+        public void GenerateMaze(int gridx , int gridy)
         {
             this.gridx = gridx;
             this.gridy = gridy;
 
             maze = new GridSpace[gridx, gridy];
-            var stream = File.OpenText("Grid.txt");  // stream = streamreader 
+            var stream = File.OpenText("Grid.txt");
             var line = "";
             var y = 0;
 
-            while ((line = stream.ReadLine()) != null)   // keeps reading till there is nothing left 
+            while ((line = stream.ReadLine()) != null)  
             {
-                var line_grid_space = line.Split(','); // spilts ?
-                for (var x = 0; x < line_grid_space.Length; x++) // 
+                var line_grid_space = line.Split(',');
+                for (var x = 0; x < line_grid_space.Length; x++) //  i = x , y = y 
                 { 
                     var g_space = new GridSpace()
                     {                                              //allows to ask for vector datas its already loaded
-                        isWallpresent = line_grid_space[x] == "B"    // if row contains w then wall is present 
+                        isWallpresent = line_grid_space[x] == "B"     // therefore wont need to instantiate 
                     };
 
                     maze[x, y] = g_space;
@@ -46,29 +48,6 @@ namespace NEA__cave_rescue_simulator
 
 
             stream.Close();
-        }
-        public void UpdateMazelayout()
-        {
-            StreamWriter writer = new StreamWriter("Grid.txt");
-            // get the saved maze from the maze array awrite it using (line = stream.ReadLine()) != null        // copypaste the other maze generator
-            
-                
-                writer.WriteLine();
-            
-
-            writer.Close();
-
-        }
-        public void SaveMazelayout()
-        {
-
-
-        }
-        public void LoadMazelayout()
-        {
-
-
-
         }
 
 

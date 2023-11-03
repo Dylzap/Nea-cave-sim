@@ -8,10 +8,8 @@ namespace NEA__cave_rescue_simulator
     public partial class frmMainForm : Form
     {
         private string[,] matrix = null;
-        GridSpace Startingpoint = null;
-        GridSpace Selectedcell = null;
-        GridSpace Endingpoint = null;
 
+        private GridSpace lastClickedOnSpace = null;
 
         public frmMainForm()
         {
@@ -58,7 +56,7 @@ namespace NEA__cave_rescue_simulator
                     newGridSpace.GridX = j;
                     newGridSpace.GridY = i;
                     newGridSpace.Location = new Point(j * newGridSpace.Width, i * newGridSpace.Height);
-                    newGridSpace.Click += GridSpace_Click;
+                    newGridSpace.Click += NewGridSpace_Click;
 
 
                     pnlGridPanel.Controls.Add(newGridSpace); 
@@ -66,17 +64,11 @@ namespace NEA__cave_rescue_simulator
             }
         }
 
-        private void GridSpace_Click(object sender, EventArgs e)
+        private void NewGridSpace_Click(object sender, EventArgs e)
         {
-            if (Selectedcell != null)
-            {
-                Selectedcell.Deselect();
-            }
-
-            Selectedcell = (GridSpace)sender;
-            Selectedcell.ClickedOn();
+            lastClickedOnSpace = ((GridSpace)sender);
+            lastClickedOnSpace.ClickedOn();
         }
-
 
         private string[,] LoadGridMap(string mapLocation)
         {
@@ -104,7 +96,12 @@ namespace NEA__cave_rescue_simulator
             return matrixLoaded;
         }
 
-     
+        //GenerateMaze(EventHandler btn_startbutton)
+        //{
+
+         //   return null; 
+        //}
+
 
         private void GridLocation_Click(object sender, EventArgs e)
         {
@@ -119,30 +116,12 @@ namespace NEA__cave_rescue_simulator
 
         private void btn_startingpoint_Click(object sender, EventArgs e)
         {
-            if (Startingpoint != null)
-            {
-               Startingpoint.Deselect();
-            }
 
-            if (Selectedcell != null)
-            {
-                Startingpoint = Selectedcell;
-                Selectedcell.BackColor = Color.Red;
-            }
         }
 
         private void btn_endingpoint_Click(object sender, EventArgs e)
         {
-            if (Endingpoint != null)
-            {
-                Startingpoint.Deselect();
-            }
 
-            if (Selectedcell != null)
-            {
-                Endingpoint = Selectedcell;
-                Endingpoint.BackColor = Color.Green;
-            }
         }
 
         private void btn_shortestpath_Click(object sender, EventArgs e)
