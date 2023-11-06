@@ -1,4 +1,5 @@
-﻿using System;
+﻿using NEA__cave_rescue_simulator.classes;
+using System;
 using System.Drawing;
 using System.IO;
 using System.Windows.Forms;
@@ -10,6 +11,9 @@ namespace NEA__cave_rescue_simulator
         private string[,] matrix = null;
 
         private GridSpace lastClickedOnSpace = null;
+        public GridSpace Startinglocation = new GridSpace();
+        public GridSpace Endinglocation = new GridSpace();
+        public Pathfinder pathfinder = new Pathfinder();
 
         public frmMainForm()
         {
@@ -67,7 +71,7 @@ namespace NEA__cave_rescue_simulator
         private void NewGridSpace_Click(object sender, EventArgs e)
         {
             lastClickedOnSpace = ((GridSpace)sender);
-            lastClickedOnSpace.ClickedOn();
+            lastClickedOnSpace.Cellclickedon();
         }
 
         private string[,] LoadGridMap(string mapLocation)
@@ -116,16 +120,37 @@ namespace NEA__cave_rescue_simulator
 
         private void btn_startingpoint_Click(object sender, EventArgs e)
         {
+            if (Startinglocation != null)
+            {
+                Startinglocation.Deselectcell();
+            }
 
+            if (lastClickedOnSpace != null)
+            {
+                Startinglocation = lastClickedOnSpace;
+                lastClickedOnSpace.BackColor = Color.Red;
+            }
         }
 
         private void btn_endingpoint_Click(object sender, EventArgs e)
         {
+            if (Endinglocation != null)
+            {
+                Endinglocation.Deselectcell();
+            }
 
+            if (lastClickedOnSpace != null)
+            {
+                Endinglocation = lastClickedOnSpace;
+                lastClickedOnSpace.BackColor = Color.Red;
+            }
         }
 
         private void btn_shortestpath_Click(object sender, EventArgs e)
         {
+          
+
+
 
         }
 

@@ -15,8 +15,8 @@ namespace NEA__cave_rescue_simulator
         public const int GRID_SPACE_HEIGHT = 20;
 
         public int Fromweightingcost = 0;
-  
-
+        public int Toweightingcost = 0;
+        public int Totalweightingcost = 0;
 
         public int GridX = 0;
         public int GridY = 0;
@@ -32,24 +32,29 @@ namespace NEA__cave_rescue_simulator
             this.BorderStyle = BorderStyle.FixedSingle;
         }
 
-        public void ClickedOn()
-        {
-            if (isSelected)
-            {
-                //Deselect
-                this.BorderStyle = BorderStyle.FixedSingle;
-                this.BackColor = Color.White;
-                this.Text = "";
-                isSelected = false;
-            }
-            else
-            {
+        public void Cellclickedon()
+        {    
                 this.BorderStyle = BorderStyle.Fixed3D;
                 this.BackColor = Color.Yellow;
                 this.Text = "C";
-                isSelected = true;
-            }
+                isSelected = true;         
         }
-        
+        public void Deselectcell()
+        {
+            //Deselect
+            this.BorderStyle = BorderStyle.FixedSingle;
+            this.BackColor = Color.White;
+            this.Text = "";
+            isSelected = false;
+
+
+        }
+
+        public void Highlightcell()
+        {
+            this.BackColor = Color.Yellow;
+            this.BorderStyle = BorderStyle.FixedSingle;
+        }
+
     }
 }

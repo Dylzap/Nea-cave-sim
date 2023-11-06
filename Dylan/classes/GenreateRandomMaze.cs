@@ -34,14 +34,7 @@ namespace NEA__cave_rescue_simulator
             currentcellcoordinates.Push(currentcell.GridX);
             currentcellcoordinates.Push(currentcell.GridY);
 
-            adjacent_cells.Add(maze.maze[start_x, start_y + 1]); // Up
-            adjacent_cells.Add(maze.maze[start_x, start_y - 1]); // Down
-            adjacent_cells.Add(maze.maze[start_x - 1 , start_y]); //left 
-            adjacent_cells.Add(maze.maze[start_x +1, start_y]);//right
-            adjacent_cells.Add(maze.maze[start_x + 1, start_y + 1]); //top right 
-            adjacent_cells.Add(maze.maze[start_x - 1, start_y + 1]);//top left 
-            adjacent_cells.Add(maze.maze[start_x + 1, start_y -1 ]);//bottom right
-            adjacent_cells.Add(maze.maze[start_x - 1, start_y - 1 ]);//bottom left 
+           
 
 
             foreach (var cell in adjacent_cells)

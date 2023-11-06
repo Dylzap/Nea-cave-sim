@@ -8,51 +8,67 @@ using System.IO;
 
 namespace NEA__cave_rescue_simulator
 {
-    public class Maze 
+    public class Maze
     {
-        public GridSpace[,] maze;
-        public int gridx;
-        public int gridy;
-        GenreateRandomMaze randomMaze;
-        
-        public Maze(GenreateRandomMaze randomMaze)
+        int[,] maze = new int[30, 20];
+         int width = 30;
+        int height = 20;
+
+        public Maze()
         {
-            this.randomMaze = randomMaze;
+            
+
         }
 
-        public void GenerateMaze(int gridx , int gridy)
+        public void Displaymaze()
         {
-            this.gridx = gridx;
-            this.gridy = gridy;
+            StreamReader sr = new StreamReader("Grid.txt");
 
-            maze = new GridSpace[gridx, gridy];
-            var stream = File.OpenText("Grid.txt");
-            var line = "";
-            var y = 0;
 
-            while ((line = stream.ReadLine()) != null)  
+            for (int i  = 0;i < width;i++) //y 
             {
-                var line_grid_space = line.Split(',');
-                for (var x = 0; x < line_grid_space.Length; x++) //  i = x , y = y 
-                { 
-                    var g_space = new GridSpace()
-                    {                                              //allows to ask for vector datas its already loaded
-                        isWallpresent = line_grid_space[x] == "B"     // therefore wont need to instantiate 
-                    };
 
-                    maze[x, y] = g_space;
+                for (int j = 0; j < height; j++) // x
+                {
+                    maze[i, j] = 0; //no walls 
+
+                    if (maze[i,j] == 1) // = wall
+                    {
+                      
+
+
+                    }
                 }
+            }
 
-                y++;       // literally create maze (program classes just its function)
+        }
+        public void GenerateMaze()
+        {
+            StreamWriter sw = new StreamWriter("Grid.txt");
+
+            for (int i = 0; i < width; i++) //y 
+            {
+
+                for (int j = 0; j < height; j++) // x
+                {
+                   if ( maze[i, j] == 0)
+                    {
+                        sw.Write(0);
+                    } //no walls 
+                 
+                   if (maze[i, j] == 1) // = wall
+                    {
+
+
+                        sw.Write(1);
+                    }
+                }
             }
 
 
-            stream.Close();
+
         }
 
-
     }
-
-
 
 }
