@@ -5,141 +5,107 @@ using System.Net.Http.Headers;
 using System.Security.Cryptography;
 using System.Text;
 using System.Threading.Tasks;
+using System.Xml.Linq;
 
 namespace NEA__cave_rescue_simulator.classes
 {
-    public class Pathfinder : frmMainForm
+    public class Pathfinder 
     {
 
-        int CurrentNvalue = 0;
-        int previousNvalue;
-        GridSpace Currentcell = new GridSpace();
-        List<(int, int)> Route = new List<(int, int)>();
-        List<(int, int)> adjacentCells = new List<(int, int)>();
- 
-        Maze maze;
-
-        int A = 0;
-        int B = 0;
-        int C = 0;
-
-
-        public Pathfinder(Maze maze)
+        public static List<Node> FindPath(int[,] maze, Node start, Node end)
         {
-            int startgridx = Startinglocation.GridX;
-            int startgridy = Startinglocation.GridY;
-            int endinggridx = Endinglocation.GridX;
-            int endinggridy = Endinglocation.GridY;
+            List<Node> openList = new List<Node>();
+            bool[,] closedList = new bool[maze.GetLength(0), maze.GetLength(1)];
+            openList.Add(start);
 
-
-
-            Currentcell.GridX = startgridx;
-            Currentcell.GridY = startgridy;
-
-        }
-
-        public Pathfinder()
-        {
-        }
-
-        static List<(int, int)> FindAdjacentCells(int[,] maze, int cellX, int cellY)
-        {
-            List<(int, int)> adjacentCells = new List<(int, int)>();
-
-            // Define the possible movement directions: up, down, left, and right.
-            int[] dx = { -1, 1, 0, 0 };
-            int[] dy = { 0, 0, -1, 1 };
-
-            for (int i = 0; i < dx.Length; i++)
+            while (openList.Count > 0)
             {
-                int newX = cellX + dx[i];
-                int newY = cellY + dy[i];
+                Node current = openList[0];
+                int currentIndex = 0;
 
-                // Check if the new coordinates are within the maze boundaries.
-                if (newX >= 0 && newX < maze.GetLength(0) && newY >= 0 && newY < maze.GetLength(1))
+                for (int i = 1; i < openList.Count; i++)
                 {
-                    adjacentCells.Add((newX, newY));
+                    if (openList[i].F < current.F || (openList[i].F == current.F && openList[i].H < current.H))
+                    {
+                        current = openList[i];
+                        currentIndex = i;
+                    }
+                }
+
+                openList.RemoveAt(currentIndex);
+                closedList[current.X, current.Y] = true;
+
+                if (current.X == end.X && current.Y == end.Y)
+                {
+                    return ReconstructPath(current);
+                }
+
+                List<Node> neighbors = GetNeighbors(maze, current, end);
+
+                foreach (Node neighbor in neighbors)
+                {
+                    if (closedList[neighbor.X, neighbor.Y])
+                    {
+                        continue;
+                    }
+
+                    int tentativeG = current.G + 1;
+
+                    if (!openList.Contains(neighbor) || tentativeG < neighbor.G)
+                    {
+                        neighbor.Parent = current;
+                        neighbor.G = tentativeG;
+                        neighbor.H = CalculateH(neighbor, end);
+
+                        if (!openList.Contains(neighbor))
+                        {
+                            openList.Add(neighbor);
+                        }
+                    }
                 }
             }
 
-            return adjacentCells;
+            return null;
         }
 
-
-        public int[,] Getweighting(int[,] Route)
+        private static List<Node> GetNeighbors(int[,] maze, Node node, Node end)
         {
-            foreach ((int x, int y) in adjacentCells)
+            List<Node> neighbors = new List<Node>();
+            int maxX = maze.GetLength(0) - 1;
+            int maxY = maze.GetLength(1) - 1;
+
+            int[] dx = { 0, 0, -1, 1 };
+            int[] dy = { -1, 1, 0, 0 };
+
+            for (int i = 0; i < 4; i++)
             {
+                int newX = node.X + dx[i];
+                int newY = node.Y + dy[i];
 
-                if (x > Endinglocation.GridX)
+                if (newX >= 0 && newX <= maxX && newY >= 0 && newY <= maxY && maze[newX, newY] == 0)
                 {
-                    A = Endinglocation.GridX - x;
-
-
+                    neighbors.Add(new Node(newX, newY));
                 }
-                if (x < Endinglocation.GridX)
-                {
-                    A = x - Endinglocation.GridX;
-
-                }
-                if (y > Endinglocation.GridX)
-                {
-                    B = Endinglocation.GridX - y;
-
-
-                }
-                if (y < Endinglocation.GridX)
-                {
-                    B = y - Endinglocation.GridX;
-
-                }
-                // finds differences in x and y coordinates
-
-
-                CurrentNvalue = (A * A) + (B * B); // pythagoras
-                previousNvalue = (Currentcell.GridX * Currentcell.GridX) + (Currentcell.GridY * Currentcell.GridY);
-
-                if (CurrentNvalue > previousNvalue) // changes square to the lowest adjacent Nvalue cell 
-                {
-                    Currentcell.GridX = x; // currentcell is compared to all adjacent cells N value and changes to the lowest N value 
-                    Currentcell.GridY = y;
-
-                    this.Route.Add((x, y));
-
-                }
-
-                return Route;
-                //square x and y
-                //compare with currentell x and y squared
-                //replace current cell with lowest cost
-
             }
 
-
+            return neighbors;
         }
 
-
-
-        public int[,] GeneratePath(int[,] maze)
+        private static int CalculateH(Node node, Node end)
         {
+            return Math.Abs(node.X - end.X) + Math.Abs(node.Y - end.Y);
+        }
 
-            while (Currentcell.GridX != Endinglocation.GridX && Currentcell.GridY !=  Endinglocation.GridY)
+        private static List<Node> ReconstructPath(Node node)
+        {
+            List<Node> path = new List<Node>();
+            while (node != null)
             {
-
-                Getweighting(int[,] Route);
-
-
+                path.Add(node);
+                node = node.Parent;
             }
-            foreach ((int x, int y) in Route)
-            {
-                GridSpace Path = new GridSpace();
-                Path.Highlightcell();
-                maze[x, y] = 1;
-                //path directly saved into  2d maze array and is repressented by 1 or 0
-
-            }
-
-            return maze;
+            path.Reverse();
+            return path;
         }
     }
 }

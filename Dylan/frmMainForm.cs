@@ -1,5 +1,6 @@
 ﻿using NEA__cave_rescue_simulator.classes;
 using System;
+using System.Collections.Generic;
 using System.Drawing;
 using System.IO;
 using System.Windows.Forms;
@@ -13,7 +14,7 @@ namespace NEA__cave_rescue_simulator
         private GridSpace lastClickedOnSpace = null;
         public GridSpace Startinglocation = new GridSpace();
         public GridSpace Endinglocation = new GridSpace();
-        public Pathfinder pathfinder = new Pathfinder();
+        public Pathfinder Astar = new Pathfinder();
 
         public frmMainForm()
         {
@@ -148,9 +149,13 @@ namespace NEA__cave_rescue_simulator
 
         private void btn_shortestpath_Click(object sender, EventArgs e)
         {
-          
+            Node start = new Node(4, 0);
+            Node end = new Node(4, 4);
+
+            List<Node> path = AStar.FindPath(maze, start, end);
 
 
+            
 
         }
 
